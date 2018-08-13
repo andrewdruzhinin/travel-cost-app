@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package trippb;
+
+service TripInfo {
+  rpc GetTripInfo(Trip) returns (TripInfoResponse) {}
+}
+
+message Point {
+  double lat = 1;
+  double long = 2;
+}
+
+message Trip {
+  Point startPoint = 1;
+  Point endPoint = 2;
+}
+
+message TripInfoResponse {
+  int64 distance = 1;
+  int64 duration = 2; 
+}
+
